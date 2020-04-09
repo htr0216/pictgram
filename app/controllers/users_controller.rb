@@ -12,10 +12,10 @@ class UsersController < ApplicationController
       render :new
     end
     
-    @user = User.find_by(id: params[:id])
+    user = User.find_by(id: params[:id])
     if user && user.authenticate(params[:password])
       log_in user
-     redirect_to root_url
+      redirect_to root_url
     end
   end
   
