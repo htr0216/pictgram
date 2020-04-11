@@ -5,7 +5,6 @@ class TopicsController < ApplicationController
   
   def new
     @topic = Topic.new
-    @topic = current_user.topics.build
   end
   
   def create
