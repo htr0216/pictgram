@@ -108,3 +108,22 @@ h1,h2 {
     }
   
 }
+
+/*======================
+　topic/new.html.erb
+=======================*/
+.btn-black {
+  color: #565656;
+  border: 1px solid #565656;
+  padding: 15px 0;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+  
+  &:hover {
+    color: #565656;
+  }
+}
+
+.topic-new-wrapper {
+  padding-top: 120px;
+}
