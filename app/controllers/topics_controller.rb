@@ -1,10 +1,10 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:favorite_users)
   end
   
   def new
-    @topic = Topic.new.includes(:favorite_users)
+    @topic = Topic.new
   end
   
   def create
