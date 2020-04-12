@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   end
   
   def new
-    @topic = Topic.new
+    @topic = Topic.new.includes(:favorite_users)
   end
   
   def create
