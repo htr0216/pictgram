@@ -24,6 +24,15 @@
             <%= image_tag 'comment.png', class: 'topic-index-icon' %>
             <p class="topic-text">
               <%= topic.description %>
+              
+              <%= form_with(model: [@topic, @comment], url: topic_comments_path(topic_id: topic.id),  local: true) do |f| %>
+                <%= f.text_field :content %>
+                <%= f.hidden_field :topic_id, value: topic.id %>
+                <%= f.submit "コメントする", class: "btn btn-primary" %>
+              <% end %>
+            <%# link_to "DELETE", topic_comment_path(topic_id: @topic, id: comment.id), method: :delete %>
+              
+              
             </p>
           </div>
         </div>
