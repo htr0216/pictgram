@@ -12,14 +12,14 @@
             
             <% if !topic.favorite_users.include?(current_user) %>
               <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
-                <i class="fa fa-heart like-btn" ></i> 
+                <i class="fa fa-heart like-btn" ></i>
               <% end %>
             <% else %>
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
                 <i class="fa fa-heart unlike-btn"></i>
               <% end %>
             <% end %>
-            
+            <%= topic.favorite_users.count %>
             
             <%= image_tag 'comment.png', class: 'topic-index-icon' %>
             <p class="topic-text">
