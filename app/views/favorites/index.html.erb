@@ -20,10 +20,16 @@
             <% end %>
             <%= topic.favorite_users.count %>
             
-            <%= image_tag "comment.png", class: "topic-index-icon" %>
+            <% if !topic.comment_ids.include?(current_user) %>
+              <%= link_to new_comment_path(topic_id: topic.id) do %>
+                <%= image_tag "comment.png", class: "topic-index-icon" %>
+              <% end %>
+            <% end %>
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            <h3>コメント</h3>
+            <%#= comment.content %>
           </div>
         </div>
       </div>
