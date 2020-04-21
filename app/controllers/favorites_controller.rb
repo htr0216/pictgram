@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
   def index
     @favorite_topics = current_user.favorite_topics
+    @comments = Comment.all #rails c でカラム名見れるので確認して、each文に表示
     
   end
   
