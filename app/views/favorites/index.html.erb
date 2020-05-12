@@ -32,7 +32,10 @@
             <% @comments.each do |comment| %><!-- Comment.allでとりだし -->
             <tr>
               <td>
-                <%= comment.content %>　<!-- 表示させたいカラム名を指定 -->
+                <%= comment.user.name %>
+                <%= comment.content %>
+                <%= comment.created_at %>
+                <br><!-- 表示させたいカラム名を指定 -->
               </td>
             </tr>
             <% end %>  
